@@ -32,26 +32,29 @@ router.post("/login", async (req, res) => {
     return res.status(401).json({ message: "User not registered" });
   }
 
-  const isMatch = bcrypt.compare(password, existingUser.password);
+  const isMatch = await bcrypt.compare(password, existingUser.password);
 
   if (!isMatch) {
     return res.status(401).json({ message: "Invalid credentials" });
   }
 
-  // create jwt token
+  // create jwt token--sending payloads
   const token = createSecretToken(existingUser.email, existingUser._id);
 
-  res.cookie("token", token, {
-    httpOnly: true,
-    sameSite: "lax",
-    secure: false,
-  });
+ // set cookie first
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: false,
+      sameSite:"lax"
+    });
 
-  res.status(200).json({
-    message: "Login successful",
-    isLoggedIn: true,
-    user: existingUser
-  });
+    // send response once
+    res.status(201).json({
+      message: "Signup successful",
+      success: true,
+      user:existingUser
+    });
+
 });
 
 export default router;

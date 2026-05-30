@@ -6,6 +6,6 @@ dotenv.config();
 export const createSecretToken = (email, id) => {
   console.log("Creating token for:", email, id);
   return jwt.sign(
-    { email, id }, process.env.JWT_SECRET
+    { email, _id:id }, process.env.JWT_SECRET
   );
 };

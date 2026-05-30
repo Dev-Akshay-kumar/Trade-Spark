@@ -1,62 +1,62 @@
-export const watchlist = [
-  {
-    name: "INFY",
-    price: 1555.45,
-    percent: "-1.60%",
-    isDown: true,
-  },
-  {
-    name: "ONGC",
-    price: 116.8,
-    percent: "-0.09%",
-    isDown: true,
-  },
-  {
-    name: "TCS",
-    price: 3194.8,
-    percent: "-0.25%",
-    isDown: true,
-  },
-  {
-    name: "KPITTECH",
-    price: 266.45,
-    percent: "3.54%",
-    isDown: false,
-  },
-  {
-    name: "QUICKHEAL",
-    price: 308.55,
-    percent: "-0.15%",
-    isDown: true,
-  },
-  {
-    name: "WIPRO",
-    price: 577.75,
-    percent: "0.32%",
-    isDown: false,
-  },
-  {
-    name: "M&M",
-    price: 779.8,
-    percent: "-0.01%",
-    isDown: true,
-  },
-  {
-    name: "RELIANCE",
-    price: 2112.4,
-    percent: "1.44%",
-    isDown: false,
-  },
-  {
-    name: "HUL",
-    price: 512.4,
-    percent: "1.04%",
-    isDown: false,
-  },
-];
+// export const watchlist = [
+//   {
+//     name: "INFY",
+//     price: 1555.45,
+//     percent: "-1.60%",
+//     isDown: true,
+//   },
+//   {
+//     name: "ONGC",
+//     price: 116.8,
+//     percent: "-0.09%",
+//     isDown: true,
+//   },
+//   {
+//     name: "TCS",
+//     price: 3194.8,
+//     percent: "-0.25%",
+//     isDown: true,
+//   },
+//   {
+//     name: "KPITTECH",
+//     price: 266.45,
+//     percent: "3.54%",
+//     isDown: false,
+//   },
+//   {
+//     name: "QUICKHEAL",
+//     price: 308.55,
+//     percent: "-0.15%",
+//     isDown: true,
+//   },
+//   {
+//     name: "WIPRO",
+//     price: 577.75,
+//     percent: "0.32%",
+//     isDown: false,
+//   },
+//   {
+//     name: "M&M",
+//     price: 779.8,
+//     percent: "-0.01%",
+//     isDown: true,
+//   },
+//   {
+//     name: "RELIANCE",
+//     price: 2112.4,
+//     percent: "1.44%",
+//     isDown: false,
+//   },
+//   {
+//     name: "HUL",
+//     price: 512.4,
+//     percent: "1.04%",
+//     isDown: false,
+//   },
+// ];
 
 // holdings
-export const holdings = [
+export const watchlist = [
   {
     name: "BHARTIARTL",
     qty: 2,
@@ -64,6 +64,8 @@ export const holdings = [
     price: 541.15,
     net: "+0.58%",
     day: "+2.99%",
+    percent: "1.44%",
+    isDown: false,
   },
   {
     name: "HDFCBANK",
@@ -72,6 +74,8 @@ export const holdings = [
     price: 1522.35,
     net: "+10.04%",
     day: "+0.11%",
+    percent: "2.42%",
+    isDown: false,
   },
   {
     name: "HINDUNILVR",
@@ -80,6 +84,8 @@ export const holdings = [
     price: 2417.4,
     net: "+3.49%",
     day: "+0.21%",
+     percent: "0.53%",
+    isDown: false,
   },
   {
     name: "INFY",
@@ -89,6 +95,8 @@ export const holdings = [
     net: "+15.18%",
     day: "-1.60%",
     isLoss: true,
+     percent: "1.50%",
+    isDown: true,
   },
   {
     name: "ITC",
@@ -96,7 +104,9 @@ export const holdings = [
     avg: 202.0,
     price: 207.9,
     net: "+2.92%",
-    day: "+0.80%",
+    day: "+0.80%", 
+    percent: "2.50%",
+    isDown: true,
   },
   {
     name: "KPITTECH",
@@ -105,6 +115,8 @@ export const holdings = [
     price: 266.45,
     net: "+6.45%",
     day: "+3.54%",
+     percent: "3.0%",
+    isDown: false,
   },
   {
     name: "M&M",
@@ -114,6 +126,8 @@ export const holdings = [
     net: "-3.72%",
     day: "-0.01%",
     isLoss: true,
+     percent: "1.30%",
+    isDown: true,
   },
   {
     name: "RELIANCE",
@@ -122,6 +136,8 @@ export const holdings = [
     price: 2112.4,
     net: "-3.71%",
     day: "+1.44%",
+     percent: "1.44%",
+    isDown: false,
   },
   {
     name: "SBIN",
@@ -131,6 +147,8 @@ export const holdings = [
     net: "+32.63%",
     day: "-0.34%",
     isLoss: true,
+     percent: "3.50%",
+    isDown: true,
   },
   {
     name: "SGBMAY29",
@@ -139,6 +157,8 @@ export const holdings = [
     price: 4719.0,
     net: "-0.17%",
     day: "+0.15%",
+    percent: "1.50%",
+    isDown: true,
   },
   {
     name: "TATAPOWER",
@@ -148,6 +168,8 @@ export const holdings = [
     net: "+19.15%",
     day: "-0.24%",
     isLoss: true,
+     percent: "6.50%",
+    isDown: true,
   },
   {
     name: "TCS",
@@ -157,6 +179,8 @@ export const holdings = [
     net: "+5.03%",
     day: "-0.25%",
     isLoss: true,
+     percent: "0.50%",
+    isDown: true,
   },
   {
     name: "WIPRO",
@@ -165,6 +189,8 @@ export const holdings = [
     price: 577.75,
     net: "+18.08%",
     day: "+0.32%",
+     percent: "3.50%",
+    isDown: false,
   },
 ];
 

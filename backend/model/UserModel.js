@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
-import OrdersModel from "./OrdersModel";
+import OrdersModel from "./OrdersModel.js";
+import HoldingsModel from "./HoldingsModel.js";
 const userSchema = new mongoose.Schema({
   email: {
     type: String,
@@ -17,12 +18,20 @@ const userSchema = new mongoose.Schema({
   },
 });
 userSchema.pre("save", async function () {
-  if (!this.isModified("password")) return;
-  this.password = await bcrypt.hash(this.password, 12);
+
+  if (!this.isModified("password")) {
+    return;
+  }
+
+  this.password = await bcrypt.hash(
+    this.password,
+    12
+  );
 });
 
-userSchema.post("findOneAndDelete",async(User)=>{
-    OrdersModel.findOneAndDelete(User._id);
+userSchema.post("findOneAndDelete",async(user)=>{
+    await OrdersModel.deleteMany({ userId: user._id });
+    await HoldingsModel.deleteMany({userId:user._id});
 })
 
 

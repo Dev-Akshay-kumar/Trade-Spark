@@ -9,5 +9,6 @@ const PositionsSchema=new Schema({
     net: String,
     day: String,
     isLoss: Boolean,
+    userId: {type: Schema.Types.ObjectId, ref: "User"},
 })
 export default PositionsSchema;

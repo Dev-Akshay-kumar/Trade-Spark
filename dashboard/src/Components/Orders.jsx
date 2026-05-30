@@ -9,9 +9,7 @@ function Orders() {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/orders");
-        console.log("Orders response:", res.data);
-
+        const res = await axios.get("http://localhost:3000/orders",{withCredentials:true});
         // adjust this depending on backend
         setOrders(res.data.data || res.data);
       } catch (error) {
