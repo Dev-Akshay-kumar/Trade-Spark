@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const PORT = process.env.PORT || 3000;
 const uri = process.env.MONGO_URL;
-console.log(uri)
+
 
 
 // 🧩 Middleware
@@ -238,9 +238,10 @@ async function connectDb(uri) {
     });
 
   } catch (err) {
-    console.error("Database connection failed ❌");
-    console.error(err);
-  }
+  console.error("Database connection failed ❌");
+  console.error(err.message);
+  console.error(err);
+}
 }
 
 connectDb(uri);
