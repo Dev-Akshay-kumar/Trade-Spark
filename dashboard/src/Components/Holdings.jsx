@@ -10,7 +10,7 @@ function Holdings() {
     const fetchHoldings = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:3000/allHoldings",
+          "https://trade-spark-backend.onrender.com//allHoldings",
           {
             withCredentials: true,
           }

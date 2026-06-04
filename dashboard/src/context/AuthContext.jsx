@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
       try {
 
         const res = await axios.get(
-          "http://localhost:3000/me",
+          "https://trade-spark-backend.onrender.com/me",
           {
             withCredentials: true,
           }

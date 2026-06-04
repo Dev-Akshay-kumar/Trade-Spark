@@ -29,7 +29,7 @@ console.log(selectedStock);
     try {
 
       const res = await axios.post(
-        "http://localhost:3000/newOrder",
+        "https://trade-spark-backend.onrender.com/newOrder",
         {
           name: uid,
           qty: Number(stockQuantity),

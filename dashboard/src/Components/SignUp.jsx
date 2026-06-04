@@ -41,7 +41,7 @@ function SignUp() {
     try {
 
       const res = await axios.post(
-        "http://localhost:3000/signup",
+        "https://trade-spark-backend.onrender.com/signup",
         formData,
         {
           withCredentials: true,

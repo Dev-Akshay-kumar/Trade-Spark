@@ -44,7 +44,7 @@ export default function Menu() {
     try {
 
       await axios.get(
-        "http://localhost:3000/logout",
+        "https://trade-spark-backend.onrender.com/logout",
         {
           withCredentials: true,
         }
