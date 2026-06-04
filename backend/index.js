@@ -10,20 +10,25 @@ import authRoute from "./routes/AuthRoute.js";
 import jwt from "jsonwebtoken";
 import bodyParser from "body-parser";
 import User from "./model/UserModel.js";
+import dns from 'dns';
+
+
 dotenv.config();
 const app = express();
 
+dns.setServers(["1.1.1.1","8.8.8.8"]);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const PORT = process.env.PORT || 3000;
 const uri = process.env.MONGO_URL;
+console.log(uri)
 
 
 // 🧩 Middleware
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174"],
+    origin: ["http://localhost:5173"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -219,25 +224,23 @@ app.post("/newOrder", isLoggedIn, async (req, res) => {
   }
 });
 
-
-// 🔌 Database connection
-const connectDb = async () => {
+async function connectDb(uri) {
   try {
     await mongoose.connect(uri, {
-      // useNewUrlParser: true,
-      // useUnifiedTopology: true,
-    });
+  serverSelectionTimeoutMS: 10000,
+  family: 4,
+});
 
     console.log("Database connected successfully ✅");
 
     app.listen(PORT, () => {
-      console.log(`Server running at http://localhost:${PORT}/`);
+      console.log(`Server running on port ${PORT}`);
     });
-  } catch (error) {
-    console.error("Database connection failed ❌");
-    console.error(error.message);
-    process.exit(1);
-  }
-};
 
-connectDb();
+  } catch (err) {
+    console.error("Database connection failed ❌");
+    console.error(err);
+  }
+}
+
+connectDb(uri);
