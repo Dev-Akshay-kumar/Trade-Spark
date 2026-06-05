@@ -28,7 +28,7 @@ const uri = process.env.MONGO_URL;
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["https://trade-spark-sooty.vercel.app"],
+    origin: "https://trade-spark-sooty.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
