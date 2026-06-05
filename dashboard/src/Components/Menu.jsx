@@ -55,7 +55,7 @@ export default function Menu() {
 
       setUser(null);
 
-      navigate("/login");
+      navigate("/");
 
     } catch (error) {
 
