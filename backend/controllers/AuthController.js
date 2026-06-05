@@ -42,7 +42,7 @@ export const Signup = async (req, res) => {
     // Set cookie
     res.cookie("token", token, {
       httpOnly: true,
-      secure: false,
+      secure: true,
       sameSite: "none",
     });
 
