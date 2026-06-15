@@ -41,10 +41,8 @@ export const Signup = async (req, res) => {
 
     // Set cookie
     res.cookie("token", token, {
-      domain:'trade-spark-sooty.vercel.app',
       httpOnly: true,
       secure: true,
-      signed: true,
       sameSite:"none"
     });
 

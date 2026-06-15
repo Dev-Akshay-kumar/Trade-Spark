@@ -48,10 +48,8 @@ router.post("/login", async (req, res) => {
 
  // set cookie first
     res.cookie("token", token, {
-      domain:'trade-spark-sooty.vercel.app',
-      httpOnly: true,
+      httpOnly: true, 
       secure: true,
-      signed: true,
       sameSite:"none"
     });
 
